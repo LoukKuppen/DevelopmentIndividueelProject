@@ -1,11 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MidiController</title>
+    <title>Midi Controller Louk</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+
+    <main class="controller-case">
+        
+        <section class="section-left">
+            <div class="fader-container">
+                <input type="range" min="0" max="100" value="50" class="fader-vertical">
+            </div>
+            <div class="sample-buttons">
+                <button class="btn-round small">Sample 1</button>
+                <button class="btn-round small">Sample 2</button>
+                <button class="btn-round small">Sample 3</button>
+            </div>
+        </section>
+
+        <section class="section-center">
+            <div class="top-controls">
+                <button class="btn-square">1/2</button>
+                <button class="btn-square">Chop</button>
+            </div>
+            
+            <div class="display-screen">
+                <img src="jouw-logo.png" alt="Display">
+            </div>
+
+            <div class="main-pads">
+                <button class="btn-large">About me</button>
+                <button class="btn-large">My projects</button>
+            </div>
+
+            <div class="number-pads">
+                <button class="btn-small">1</button>
+                <button class="btn-small">2</button>
+                <button class="btn-small">3</button>
+                <button class="btn-small">4</button>
+            </div>
+        </section>
+
+        <section class="section-right">
+            <div class="speaker-grill">
+                </div>
+            
+            <div class="drum-pads">
+                <button class="btn-square">Kick</button>
+                <button class="btn-square">Hat</button>
+                <button class="btn-square">Clap</button>
+            </div>
+
+            <div class="volume-control">
+                <div class="knob">
+                    <div class="knob-marker"></div>
+                </div>
+                <span class="label">Volume</span>
+            </div>
+        </section>
+
+    </main>
+
 </body>
 </html>
