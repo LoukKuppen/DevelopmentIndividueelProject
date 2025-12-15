@@ -1,32 +1,23 @@
-body {
-    background-color: #333; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.controller-case {
-
-    background-image: url(''); 
-    background-size: cover;
-    background-color: #e0e0e0;
-    
-
-    width: 900px;
-    height: 500px;
-    border-radius: 20px;
-    
-
-    box-shadow: 
-        10px 10px 30px rgba(0,0,0,0.5), 
-        inset 2px 2px 5px rgba(255,255,255,0.4);
-
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    gap: 20px;
-    padding: 30px;
-    box-sizing: border-box;
-}
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        
+        .rectangle {
+            width: 1200px;
+            height: 630px;
+            background-color: #c4c4c4;
+            border-radius: 20px;
+            stroke-width: 20px;
+            box-shadow: 23px 23px 10px rgba(0, 0, 0, 1);       
+            border: 3px solid #000000;
+            background-image: url('/img/BackgroundImage.jpg');
+            background-size: cover;
+            background-position: center;
+            
+        }
 
