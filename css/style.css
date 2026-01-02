@@ -1,23 +1,194 @@
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
+
+body {
+    background-color: #333; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: sans-serif;
+    color: #aaa;
+}
+
+
+.board {
+    width: 900px;
+    height: 550px;
+    background-image: url('/img/BackgroundImage.jpg');
+    background-size: cover;
+    border-radius: 30px;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
+    padding: 30px;
+    box-sizing: border-box;
+    
+
+    display: grid;
+    grid-template-columns: 1fr 0.8fr 2fr 1.2fr; 
+    gap: 20px;
+}
+
+
+.btn {
+    background: white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+    font-size: 1.2rem;
+    cursor: pointer;
+    /* De schaduw maakt het een knop: */
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.2), inset 1px 1px 0 rgba(255,255,255,1); 
+    transition: transform 0.1s;
+}
+
+
+/* --- Vormen --- */
+
+
+.square {
+    border-radius: 15px;
+}
+
+
+.circle {
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+}
+
+
+
+/* Kolom 1: Slider */
+.column-slider {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.row-top {
+    display: flex;
+    gap: 10px;
+}
+.btn.small {
+    width: 100px;
+    height: 100px;
+}
+.slider-track {
+    background: white;
+    flex-grow: 1; /* Vult de rest van de hoogte */
+    border-radius: 15px;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1); /* Schaduw naar binnen */
+    position: relative;
+    width: 100px;
+}
+.slider-knob {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(145deg, #ffffff, #dcdcdc);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    border: 1px solid #ccc;
+}
+
+
+.column-samples {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.column-center {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.screen {
+    background-color: #d63384;
+    height: 140px;
+    width: 100%;
+
+    border: 3px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00ff00;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 2rem;
+}
+.row-middle {
+    display: flex;
+    gap: 20px;
+    height: 140px;
+}
+.btn.large {
+    width: 50%;
+    height: 100%;
+    font-size: 1.5rem;
+}
+.row-bottom {
+    display: flex;
+    gap: 15px;
+}
+.btn.number {
+    flex: 1;
+    aspect-ratio: 1/1;
+    font-size: 1.5rem;
+}
+
+
+.column-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pad-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+.speaker-grill {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    padding: 10px;
+}
+.speaker-grill span {
+    width: 4px;
+    height: 4px;
+    background: #888;
+    border-radius: 50%;
+}
+
+.volume-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.volume-knob {
+    width: 120px;
+    height: 120px;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+    position: relative;
+}
+/* De streepjes op de knop */
+.volume-knob::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 4px;
+    height: 20px;
+    background: #ccc;
+    transform: translateX(-50%);
+}
         
-        .rectangle {
-            width: 1200px;
-            height: 630px;
-            background-color: #c4c4c4;
-            border-radius: 20px;
-            stroke-width: 20px;
-            box-shadow: 23px 23px 10px rgba(0, 0, 0, 1);       
-            border: 3px solid #000000;
-            background-image: url('/img/BackgroundImage.jpg');
-            background-size: cover;
-            background-position: center;
-            
-        }
 

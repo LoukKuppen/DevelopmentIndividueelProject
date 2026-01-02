@@ -3,11 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grijze Rechthoek</title>
+    <title>MIDIcontroller</title>
     <link rel="stylesheet" href="/css/style.css">
-
 </head>
 <body>
-    <div class="rectangle"></div>
+
+    <div class="board">
+        
+        <div class="column-slider">
+            <div class="row-top">
+                <div class="btn square small">1/2</div>
+                <div class="btn square small">Chop</div>
+            </div>
+            <div class="slider-track">
+                <div class="slider-knob"></div>
+            </div>
+        </div>
+
+        <div class="column-samples">
+            <div class="btn circle">Sample 1</div>
+            <div class="btn circle">Sample 2</div>
+            <div class="btn circle">Sample 3</div>
+        </div>
+
+        <div class="column-center">
+            <div class="screen">
+                <h1 style="transform: rotate(-5deg);"></h1> 
+            </div>
+            
+            <div class="row-middle">
+                <div class="btn square large">About me</div>
+                <div class="btn square large">My projects</div>
+            </div>
+
+            <div class="row-bottom">
+                <div class="btn square number">1</div>
+                <div class="btn square number">2</div>
+                <div class="btn square number">3</div>
+                <div class="btn square number">4</div>
+            </div>
+        </div>
+
+        <div class="column-right">
+            <div class="pad-group">
+                <div class="btn square">Kick</div>
+                <div class="speaker-grill">
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                </div>
+                <div class="btn square">Hat</div>
+                <div class="btn square">Clap</div>
+            </div>
+            
+            <div class="volume-container">
+                <div class="volume-knob"></div>
+            </div>
+        </div>
+<div class="container">
+		<div class="container-item">
+			<span id="key48" class="key"></span>
+			<span id="key49" class="key"></span>
+			<span id="key50" class="key"></span>
+			<span id="key51" class="key"></span>
+			<span id="key52" class="key"></span>
+			<span id="key53" class="key"></span>
+			<span id="key54" class="key"></span>
+			<span id="key55" class="key"></span>
+			<span id="key56" class="key"></span>
+			<span id="key57" class="key"></span>
+			<audio class="audio" id="effect" controls="controls">
+              <source id="sourceOgg" src="" type="audio/ogg" />
+              <source id="sourceMp3" src="" type="audio/mp3" />
+              Your browser does not support the audio element.
+            </audio>
+            <p id="log"></p>
+		</div>
+
+	</div>
+	<script type="text/javascript" src="js/script.js"></script>
+
+
+    </div>
+
 </body>
 </html>
