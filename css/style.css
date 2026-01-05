@@ -115,9 +115,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #00ff00;
+    
     font-family: 'Brush Script MT', cursive;
     font-size: 2rem;
+}
+
+.screen .logo {
+    max-height: 180px;
+    max-width: 100%;
+    
 }
 .row-middle {
     display: flex;
@@ -151,6 +157,12 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 15px;
 }
+
+.pad-group .btn.square {
+    aspect-ratio: 1 / 1;
+    min-height: 100px;
+}
+
 .speaker-grill {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
