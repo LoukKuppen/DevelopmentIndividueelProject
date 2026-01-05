@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	function playForLabel(label) {
 		if (!/^[0-9]$/.test(label)) return;
-		var audio = new Audio('music/' + label + '.mp3');
+		var audio = new Audio('music/sample' + label + '.mp3');
 		audio.volume = 0.8;
 		audio.play().catch(function (err) { console.warn('Playback failed:', err); });
 
@@ -23,6 +23,12 @@ document.addEventListener('DOMContentLoaded', function () {
 			playForLabel(label);
 		});
 	});
+
+	var sampleButtons = document.querySelectorAll('.btn.circle');
+	var currentLoopAudio = null;
+	var currentLoopBtn = null;
+
+
 
 
 	document.addEventListener('keydown', function (e) {
