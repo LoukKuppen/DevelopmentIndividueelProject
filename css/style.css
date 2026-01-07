@@ -35,9 +35,9 @@ body {
     font-weight: 300;
     font-size: 1.2rem;
     cursor: pointer;
-    box-shadow: 3px 3px 6px rgba(0,0,0,0.2), inset 1px 1px 0 rgba(255,255,255,1); 
+    box-shadow: 6px 6px 0 rgba(0,0,0,1), inset 1px 1px 0 rgba(255,255,255,1);
     transition: transform 0.1s;
-    color: #333;
+    color: #000000;
 }
 
 .btn:active {
@@ -133,7 +133,7 @@ body {
 
 .screen {
     background-color: #d63384;
-    height: 140px;
+    height: 180px;
     width: 100%;
     border: 3px solid #000;
     border-radius: 10px;
@@ -148,8 +148,8 @@ body {
 }
 
 .screen .logo {
-    max-height: 90%;
-    max-width: 90%;
+    max-height: 130%;
+    max-width: 130%;
     object-fit: contain;
 }
 
