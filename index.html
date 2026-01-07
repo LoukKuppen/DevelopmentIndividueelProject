@@ -4,30 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MIDIcontroller</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <div class="board">
         
-        <div class="column-slider">
-            <div class="row-top">
-                <div class="btn square small">1/2</div>
-                <div class="btn square small">Chop</div>
-            </div>
-            <div class="slider-track">
-                <div class="slider-knob"></div>
-            </div>
-
+        <div class="column-left-wrapper">
             
-        </div>
+            <div class="sub-column-slider">
+                <div class="btn square small">1/2</div>
+                <div class="slider-track">
+                    <div class="slider-knob"></div>
+                </div>
+            </div>
 
+            <div class="sub-column-samples">
+                <div class="btn square small">Chop</div>
+                
+                <div class="sample-list">
+                    <div class="btn circle">Sample 1</div>
+                    <div class="btn circle">Sample 2</div>
+                    <div class="btn circle">Sample 3</div>
+                </div>
+            </div>
 
-
-        <div class="column-samples">
-            <div class="btn circle">Sample 1</div>
-            <div class="btn circle">Sample 2</div>
-            <div class="btn circle">Sample 3</div>
         </div>
 
         <div class="column-center">
@@ -52,6 +53,10 @@
             <div class="pad-group">
                 <div class="btn square">Kick</div>
                 <div class="speaker-grill">
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
                 </div>
                 <div class="btn square">Hat</div>
                 <div class="btn square">Clap</div>
@@ -62,8 +67,7 @@
             </div>
         </div>
 
-	<script type="text/javascript" src="js/script.js"></script>
-
+    <script type="text/javascript" src="js/script.js"></script>
 
     </div>
 

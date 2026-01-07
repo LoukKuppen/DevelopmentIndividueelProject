@@ -1,4 +1,3 @@
-
 body {
     background-color: #333; 
     display: flex;
@@ -7,25 +6,26 @@ body {
     height: 100vh;
     font-family: sans-serif;
     color: #aaa;
+    margin: 0; /* Belangrijk om scrollbars te voorkomen bij 100vh */
 }
 
-
 .board {
-    width: 900px;
-    height: 550px;
+    width: 950px; /* Iets breder gemaakt zodat alles mooi past */
+    height: 600px; /* Iets hoger voor ruimte */
     background-image: url('/img/BackgroundImage.jpg');
+    background-color: #444; /* Fallback kleur als plaatje niet laadt */
     background-size: cover;
     border-radius: 30px;
     box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
     padding: 30px;
     box-sizing: border-box;
-    
 
     display: grid;
-    grid-template-columns: 1fr 0.8fr 2fr 1.2fr; 
-    gap: 20px;
+    /* AANGEPAST: Nu 3 kolommen in plaats van 4 */
+    /* Linker blok (slider+samples) | Midden blok | Rechter blok */
+    grid-template-columns: 240px 1fr 200px; 
+    gap: 30px;
 }
-
 
 .btn {
     background: white;
@@ -36,49 +36,78 @@ body {
     font-weight: 300;
     font-size: 1.2rem;
     cursor: pointer;
-    /* De schaduw maakt het een knop: */
     box-shadow: 3px 3px 6px rgba(0,0,0,0.2), inset 1px 1px 0 rgba(255,255,255,1); 
     transition: transform 0.1s;
+    color: #333; /* Tekstkleur toegevoegd voor leesbaarheid */
 }
 
+.btn:active {
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.2);
+    transform: translateY(2px);
+}
 
 /* --- Vormen --- */
-
 
 .square {
     border-radius: 15px;
 }
-
 
 .circle {
     border-radius: 50%;
     aspect-ratio: 1 / 1;
 }
 
+/* --- AANGEPASTE LAYOUT VOOR LINKS (SLIDER & SAMPLES) --- */
 
+.column-left-wrapper {
+    display: flex;
+    gap: 20px; /* Ruimte tussen de slider-kolom en de sample-kolom */
+}
 
-/* Kolom 1: Slider */
-.column-slider {
+/* Sub-kolom voor 1/2 en Slider */
+.sub-column-slider {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 100px; /* Vaste breedte gelijk aan de knop */
 }
-.row-top {
+
+/* Sub-kolom voor Chop en Samples */
+.sub-column-samples {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    gap: 15px;
+    width: 100px; /* Vaste breedte gelijk aan de knop */
 }
+
+.sample-list {
+    flex-grow: 1; /* Vult de ruimte onder de Chop knop */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Verdeelt de 3 samples over de hoogte */
+}
+
+/* Zorg dat de sample knoppen niet te klein worden */
+.sample-list .btn.circle {
+    width: 100%; 
+    font-size: 0.9rem; /* Iets kleinere tekst voor in de rondjes */
+}
+
 .btn.small {
     width: 100px;
     height: 100px;
+    flex-shrink: 0; /* Zorgt dat deze knop altijd 100px blijft */
 }
+
 .slider-track {
-    background: white;
-    flex-grow: 1; /* Vult de rest van de hoogte */
+    background: #eee;
+    flex-grow: 1; 
     border-radius: 15px;
-    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1); /* Schaduw naar binnen */
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1);
     position: relative;
-    width: 100px;
+    width: 100%; /* Vult de sub-kolom */
 }
+
 .slider-knob {
     width: 40px;
     height: 40px;
@@ -86,65 +115,71 @@ body {
     border-radius: 50%;
     position: absolute;
     left: 50%;
-    top: 30%;
+    top: 50%; /* Standaard in het midden gezet */
     transform: translate(-50%, -50%);
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     border: 1px solid #ccc;
+    cursor: grab;
 }
 
-
-.column-samples {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-}
-
+/* --- MIDDEN KOLOM --- */
 
 .column-center {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    /* Zorgt dat deze kolom de ruimte pakt die over is */
+    min-width: 0; 
 }
+
 .screen {
     background-color: #d63384;
     height: 140px;
     width: 100%;
-
     border: 3px solid #000;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    
     font-family: 'Brush Script MT', cursive;
     font-size: 2rem;
+    color: white;
+    box-sizing: border-box;
+    overflow: hidden; /* Zorgt dat logo niet buiten scherm valt */
 }
 
 .screen .logo {
-    max-height: 180px;
-    max-width: 100%;
-    
+    max-height: 90%;
+    max-width: 90%;
+    object-fit: contain;
 }
+
 .row-middle {
     display: flex;
     gap: 20px;
-    height: 140px;
+    height: 120px;
 }
+
 .btn.large {
-    width: 50%;
+    flex: 1; /* Vult de ruimte eerlijk */
     height: 100%;
     font-size: 1.5rem;
 }
+
 .row-bottom {
     display: flex;
     gap: 15px;
+    flex-grow: 1; /* Duwt naar beneden */
+    align-items: flex-end; /* Lijnt uit aan de onderkant */
 }
+
 .btn.number {
     flex: 1;
     aspect-ratio: 1/1;
     font-size: 1.5rem;
 }
 
+/* --- RECHTER KOLOM --- */
 
 .column-right {
     display: flex;
@@ -160,38 +195,45 @@ body {
 
 .pad-group .btn.square {
     aspect-ratio: 1 / 1;
-    min-height: 100px;
+    width: 100%;
 }
 
 .speaker-grill {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 4px;
+    gap: 5px;
     padding: 10px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 10px;
+    align-content: center;
+    justify-content: center;
 }
 .speaker-grill span {
-    width: 4px;
-    height: 4px;
-    background: #888;
+    width: 6px;
+    height: 6px;
+    background: #666;
     border-radius: 50%;
+    display: block;
 }
 
 .volume-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
+
 .volume-knob {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     background: white;
     border-radius: 50%;
     border: 2px solid #ddd;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
     position: relative;
+    cursor: grab;
 }
-/* De streepjes op de knop */
+
 .volume-knob::after {
     content: '';
     position: absolute;
@@ -202,5 +244,3 @@ body {
     background: #ccc;
     transform: translateX(-50%);
 }
-        
-
