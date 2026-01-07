@@ -10,10 +10,10 @@ body {
 }
 
 .board {
-    width: 950px; /* Iets breder gemaakt zodat alles mooi past */
-    height: 600px; /* Iets hoger voor ruimte */
+    width: 950px;
+    height: 600px;
     background-image: url('/img/BackgroundImage.jpg');
-    background-color: #444; /* Fallback kleur als plaatje niet laadt */
+    background-color: #444;
     background-size: cover;
     border-radius: 30px;
     box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
@@ -21,8 +21,7 @@ body {
     box-sizing: border-box;
 
     display: grid;
-    /* AANGEPAST: Nu 3 kolommen in plaats van 4 */
-    /* Linker blok (slider+samples) | Midden blok | Rechter blok */
+
     grid-template-columns: 240px 1fr 200px; 
     gap: 30px;
 }
@@ -38,7 +37,7 @@ body {
     cursor: pointer;
     box-shadow: 3px 3px 6px rgba(0,0,0,0.2), inset 1px 1px 0 rgba(255,255,255,1); 
     transition: transform 0.1s;
-    color: #333; /* Tekstkleur toegevoegd voor leesbaarheid */
+    color: #333;
 }
 
 .btn:active {
@@ -57,19 +56,19 @@ body {
     aspect-ratio: 1 / 1;
 }
 
-/* --- AANGEPASTE LAYOUT VOOR LINKS (SLIDER & SAMPLES) --- */
+
 
 .column-left-wrapper {
     display: flex;
-    gap: 20px; /* Ruimte tussen de slider-kolom en de sample-kolom */
+    gap: 20px;
 }
 
-/* Sub-kolom voor 1/2 en Slider */
+
 .sub-column-slider {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    width: 100px; /* Vaste breedte gelijk aan de knop */
+    width: 100px;
 }
 
 /* Sub-kolom voor Chop en Samples */
@@ -77,26 +76,26 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    width: 100px; /* Vaste breedte gelijk aan de knop */
+    width: 100px;
 }
 
 .sample-list {
-    flex-grow: 1; /* Vult de ruimte onder de Chop knop */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Verdeelt de 3 samples over de hoogte */
+    justify-content: space-between;
 }
 
-/* Zorg dat de sample knoppen niet te klein worden */
+
 .sample-list .btn.circle {
     width: 100%; 
-    font-size: 0.9rem; /* Iets kleinere tekst voor in de rondjes */
+    font-size: 0.9rem;
 }
 
 .btn.small {
     width: 100px;
     height: 100px;
-    flex-shrink: 0; /* Zorgt dat deze knop altijd 100px blijft */
+    flex-shrink: 0; 
 }
 
 .slider-track {
@@ -105,7 +104,7 @@ body {
     border-radius: 15px;
     box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1);
     position: relative;
-    width: 100%; /* Vult de sub-kolom */
+    width: 100%;
 }
 
 .slider-knob {
@@ -115,7 +114,7 @@ body {
     border-radius: 50%;
     position: absolute;
     left: 50%;
-    top: 50%; /* Standaard in het midden gezet */
+    top: 50%; 
     transform: translate(-50%, -50%);
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     border: 1px solid #ccc;
@@ -128,7 +127,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /* Zorgt dat deze kolom de ruimte pakt die over is */
+
     min-width: 0; 
 }
 
@@ -145,7 +144,7 @@ body {
     font-size: 2rem;
     color: white;
     box-sizing: border-box;
-    overflow: hidden; /* Zorgt dat logo niet buiten scherm valt */
+    overflow: hidden;
 }
 
 .screen .logo {
@@ -161,7 +160,7 @@ body {
 }
 
 .btn.large {
-    flex: 1; /* Vult de ruimte eerlijk */
+    flex: 1;
     height: 100%;
     font-size: 1.5rem;
 }
