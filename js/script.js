@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	if (modeToggleBtn) {
 		modeToggleBtn.addEventListener('click', function () {
-			var audio = new Audio('music/sample6.mp3');
+			var audio = new Audio('music/halfstep.mp3');
 			audio.volume = 0.8;
 			audio.play().catch(function (err) { console.warn('Playback failed:', err); });
 		});
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	if (chopBtn) {
 		chopBtn.addEventListener('click', function () {
-			var audio = new Audio('music/chop_placeholder.mp3');
+			var audio = new Audio('music/chop.mp3');
 			audio.volume = 0.8;
 			audio.play().catch(function (err) { console.warn('Playback failed:', err); });
 		});
