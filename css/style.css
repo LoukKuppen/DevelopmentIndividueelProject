@@ -243,3 +243,7 @@ body {
     background: #ccc;
     transform: translateX(-50%);
 }
+
+a.btn {
+    text-decoration: none;
+}
