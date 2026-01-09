@@ -1,6 +1,28 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 	var numberButtons = document.querySelectorAll('.btn.number');
+	var modeToggleBtn = document.querySelector('.btn.square.small');
+	var chopBtn = Array.prototype.find.call(document.querySelectorAll('.btn'), function(btn) {
+		return (btn.textContent || btn.innerText || '').trim() === 'Chop';
+	});
+
+
+	if (modeToggleBtn) {
+		modeToggleBtn.addEventListener('click', function () {
+			var audio = new Audio('music/sample6.mp3');
+			audio.volume = 0.8;
+			audio.play().catch(function (err) { console.warn('Playback failed:', err); });
+		});
+	}
+
+
+	if (chopBtn) {
+		chopBtn.addEventListener('click', function () {
+			var audio = new Audio('music/chop_placeholder.mp3');
+			audio.volume = 0.8;
+			audio.play().catch(function (err) { console.warn('Playback failed:', err); });
+		});
+	}
 
 	function playForLabel(label) {
 		if (!/^[0-9]$/.test(label)) return;
@@ -11,6 +33,12 @@ document.addEventListener('DOMContentLoaded', function () {
 		highlightForDigit(label);
 	}
 
+	function playDrumSound(label) {
+		if (!/^[1-4]$/.test(label)) return;
+		var audio = new Audio('music/fx' + label + '.mp3');
+		audio.volume = 0.8;
+		audio.play().catch(function (err) { console.warn('Playback failed:', err); });
+	}
 
 	function highlightForDigit(d) {
 
@@ -47,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	numberButtons.forEach(function (btn) {
 		btn.addEventListener('click', function () {
 			var label = btn.textContent.trim();
-			playForLabel(label);
+			playDrumSound(label);
 		});
 	});
 
